@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WallpaperView extends StatelessWidget {
@@ -11,13 +12,25 @@ class WallpaperView extends StatelessWidget {
       body: Stack(
         children: [
           SizedBox(
-            height: double.infinity,
-            width: double.infinity,
-            child: Image.network(
-              image,
-              fit: BoxFit.cover,
-            ),
-          ),
+              height: double.infinity,
+              width: double.infinity,
+              child: Image.network(image, fit: BoxFit.cover)),
+          Positioned(
+              top: 60,
+              left: 30,
+              child: SizedBox(
+                height: 50,
+                width: 50,
+                child: IconButton(
+                    style: IconButton.styleFrom(
+                      highlightColor: const Color(0xff3f64f5),
+                      backgroundColor: Colors.grey.withOpacity(0.4),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(CupertinoIcons.back, color: Colors.white)),
+              )),
           Align(
             alignment: Alignment.bottomCenter,
             child: SizedBox(
@@ -54,7 +67,7 @@ class WallpaperView extends StatelessWidget {
               padding: const EdgeInsets.all(14),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
-              backgroundColor: const Color(0xffc3bdb8).withOpacity(0.3)),
+              backgroundColor: Colors.grey.withOpacity(0.4)),
           icon: Icon(
             icon,
             color: Colors.white,
