@@ -15,19 +15,18 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       emit(SearchLoadingState());
       try {
         var rowData;
-        if (event.color != '' && event.query == '' ) {
+        if (event.color != '' && event.query == '') {
           rowData = await apiHelper.getApi(
-              url:
-                  '${Urls.searchUrl}?query=${event.color}');
+              url: '${Urls.searchUrl}?query=${event.color}&page=${event.page}&per_page=20');
         } else if (event.query != '' && event.color == '') {
           rowData = await apiHelper.getApi(
-              url: '${Urls.searchUrl}?query=${event.query}');
-        }else {
+              url:
+                  '${Urls.searchUrl}?query=${event.query}&page=${event.page}&per_page=20');
+        } else {
           rowData = await apiHelper.getApi(
-              url: '${Urls.searchUrl}?query=${event.query}&color=${event.color}');
-
+              url:
+                  '${Urls.searchUrl}?query=${event.query}&color=${event.color}&page=${event.page}&per_page=20');
         }
-        
 
         var colorData = WallpaperDataModel.fromJson(rowData);
         emit(SearchLoadedState(data: colorData));
@@ -35,5 +34,8 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         emit(SearchErrorState(errorMsg: (e as AppExecption).toErrorMassage()));
       }
     });
+
+
+    
   }
 }

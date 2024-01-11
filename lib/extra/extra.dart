@@ -34,3 +34,32 @@
   //     setState(() {});
   //   }
   // }
+
+
+
+
+  // apply and save function
+  //   void applyWallpaper(BuildContext context) {
+  //   var mq = MediaQuery.of(context).size;
+  //   var imageStream = Wallpaper.imageDownloadProgress(widget.imageUrl);
+  //   imageStream.listen((events) {
+  //     if (events == '100%') {
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //           const SnackBar(content: Text('Apply Successfully')));
+  //     }
+  //   }, onDone: () async {
+  //     var check = await Wallpaper.homeScreen(
+  //       width: mq.width,
+  //       height: mq.height,
+  //       options: RequestSizeOptions.RESIZE_FIT,
+  //     );
+  //   }, onError: (e) {
+  //     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$e')));
+  //   });
+  // }
+
+  // void saveWallpaper() {
+  //   GallerySaver.saveImage(widget.imageUrl).then((value) =>
+  //       ScaffoldMessenger.of(context)
+  //           .showSnackBar(const SnackBar(content: Text('Saved Successfully'))));
+  // }

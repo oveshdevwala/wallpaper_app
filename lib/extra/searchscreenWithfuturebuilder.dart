@@ -28,7 +28,8 @@ class _SearchScreenFutureBuilderState extends State<SearchScreenFutureBuilder> {
 
   Future<WallpaperDataModel?> getAllSearchResults(
       {required String search, String myColor = ''}) async {
-    var apiKey = " WuSQl2o2WCR4yEHwD4fijNKVEptdFzfuFSAqPcRlie2uNuvZQnhBDMRC";
+    var apiKey = "WuSQl2o2WCR4yEHwD4fijNKVEptdFzfuFSAqPcRlie2uNuvZQnhBDMRC";
+    
     var uri = Uri.parse(
         'https://api.pexels.com/v1/search?query=$search&color=${myColor.toString()}');
     var response =

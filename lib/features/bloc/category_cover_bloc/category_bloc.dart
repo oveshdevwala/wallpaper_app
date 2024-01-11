@@ -27,4 +27,6 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
       emit(CategoryErrorState(errMsg: (e as AppExecption).toErrorMassage()));
     }
   }
+
+  
 }

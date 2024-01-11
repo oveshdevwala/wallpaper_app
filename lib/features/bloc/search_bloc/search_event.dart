@@ -7,9 +7,11 @@ sealed class SearchEvent {}
 class SearchWallEvent extends SearchEvent {
   String color;
   String query;
-  
+  int page;
+
   SearchWallEvent({
-     this.color ='',
-   required this.query,
+    this.color = '',
+    this.page =1,
+    required this.query,
   });
 }

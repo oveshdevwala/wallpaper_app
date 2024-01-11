@@ -11,6 +11,7 @@ class CategorySearchEvent extends CategoryEvent {
   });
 }
 
-class CategoryCoverEvent extends CategoryEvent {
-  
-}
+class CategoryCoverEvent extends CategoryEvent {}
+
+
+
