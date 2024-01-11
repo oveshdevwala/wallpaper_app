@@ -64,10 +64,9 @@ class CategoryScreen extends StatelessWidget {
                       borderRadius:
                           BorderRadius.horizontal(left: Radius.circular(12)))),
               onPressed: () {
-                if (page > 1) {
+                if (provider.pageIndex > 1) {
                   context.read<SearchBloc>().add(SearchWallEvent(
                       query: query, color: color, page: provider.pageIndex));
-
                   provider.goToPreviousPage(myScrollController!);
                 }
               },
