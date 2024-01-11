@@ -10,6 +10,7 @@ import 'package:wallpaper_app/features/bloc/wallpaper_view_bloc/wallpaper_view_b
 import 'package:wallpaper_app/features/screens/home_screen.dart';
 
 void main() {
+  // Bloc and Provider State Management
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(create: (context) => WallpaperBloc(apiHelper: ApiHelper())),
